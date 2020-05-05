@@ -6532,6 +6532,14 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
+m-react-splitters@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/m-react-splitters/-/m-react-splitters-1.2.0.tgz#75babeac9093ca63dd83c58bf5bdccfb88e6af5e"
+  integrity sha512-w6zftbSImtRH5NcbbZFNBnziTJC5iG3hDo5oF1GYRAnbYCsDCEMLCHeJZG3X/6Bhy6fz1RJ+sZcvMSmY5pZkqQ==
+  dependencies:
+    react "^16.4.2"
+    react-dom "^16.4.2"
+
 make-dir@^2.0.0, make-dir@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-2.1.0.tgz#5f0310e18b8be898cc07009295a30ae41e91e6f5"
@@ -8582,7 +8590,7 @@ react-dev-utils@^10.2.1:
     strip-ansi "6.0.0"
     text-table "0.2.0"
 
-react-dom@^16.13.1:
+react-dom@^16.13.1, react-dom@^16.4.2:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
   integrity sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag==
@@ -8662,7 +8670,7 @@ react-scripts@3.4.1:
   optionalDependencies:
     fsevents "2.1.2"
 
-react@^16.13.1:
+react@^16.13.1, react@^16.4.2:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==

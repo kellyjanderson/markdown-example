@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Markdown from 'markdown-to-jsx';
+import Splitter from 'm-react-splitters';
 
+import 'm-react-splitters/lib/splitters.css';
 import './App.css';
 
 const colors = {
@@ -19,21 +21,26 @@ const SiteContainer = styled.div`
     padding: 5px;
     background: ${colors.background};
     text-align: left;
+    height: 100vh;
 `;
 
 const OutlinedMain = styled.main`
     border: solid 1px ${colors.lightBorder};
     background: ${colors.contentBackground};
+    height:100%;
 `;
 
 const MarkdownContainer = styled(Markdown)`
     display: block;
-    min-height:200px;
+    height: 100%;
+    overflow: auto;
 `;
 
 const MarkdownEditor = styled.textarea`
     min-height: 200px;
     width: 100%;
+    resize: none;
+    height: 100%;
 `;
 
 function App() {
@@ -46,10 +53,28 @@ function App() {
                     <h1>Markdown Working example</h1>
                 </SveltHeader>
                 <OutlinedMain>
-                    <MarkdownContainer>
-                        {md}
-                    </MarkdownContainer>
-                    <MarkdownEditor value={md} onChange={handleMDChange} />
+                    <Splitter
+                        position="horizontal"
+                        primaryPaneMaxHeight="80%"
+                        primaryPaneMinHeight={0}
+                        primaryPaneHeight="400px"
+                        dispatchResize={true}
+                        postPoned={true}
+                    >
+                        <Splitter
+                            position="vertical"
+                            primaryPaneMaxWidth="80%"
+                            primaryPaneMinWidth={0}
+                            primaryPaneWidth="400px"
+                            postPoned={false}
+                        >
+                            <MarkdownEditor value={md} onChange={handleMDChange} />
+                            <MarkdownContainer>
+                                {md}
+                            </MarkdownContainer>
+                        </Splitter>
+                        <div></div>
+                    </Splitter>
                 </OutlinedMain>
             </SiteContainer>
 
