@@ -84,19 +84,6 @@ function App() {
 
 
 const baseMD = `
----
-
----
-
----
-
-# Scroll to the bottom to edit
-
----
-
----
-
----
 
 # h1 Heading 8-)
 ## h2 Heading
