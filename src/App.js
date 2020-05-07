@@ -34,6 +34,7 @@ const MarkdownContainer = styled(Markdown)`
     display: block;
     height: 100%;
     overflow: auto;
+
 `;
 
 const MarkdownEditor = styled.textarea`
@@ -41,6 +42,13 @@ const MarkdownEditor = styled.textarea`
     width: 100%;
     resize: none;
     height: 100%;
+`;
+
+
+const BigOrangeHeader = styled.h1`
+    font-size: 48px;
+    color: orange;
+    font-weight: bold;
 `;
 
 function App() {
@@ -69,7 +77,15 @@ function App() {
                             postPoned={false}
                         >
                             <MarkdownEditor value={md} onChange={handleMDChange} />
-                            <MarkdownContainer>
+                            <MarkdownContainer
+                                options={{
+                                    overrides: {
+                                        h1: {
+                                            component: BigOrangeHeader,
+                                        }
+                                    }
+                                }}
+                            >
                                 {md}
                             </MarkdownContainer>
                         </Splitter>
