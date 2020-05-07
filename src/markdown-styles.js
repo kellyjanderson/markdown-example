@@ -37,6 +37,14 @@ const mdH6 = styled.h6`
     font-weight: bold;
 `;
 
+const mdhr = styled.hr`
+    border: 3px dotted blue;
+`;
+
+const mdStrong = styled.strong`
+                font-weight: bolder;
+                color: #F27997;
+`;
 
 export const mdTemplateOverrides = {
         h1: {
@@ -56,5 +64,28 @@ export const mdTemplateOverrides = {
         },
         h6: {
             component: mdH6
-        }
+        },
+        hr: {
+            component: mdhr
+        },
+        strong: {
+            component: mdStrong
+        },
+        em: {
+            component: styled.em`
+                font-weight: lighter;
+                font-style: italic;
+                color: #887711;
+        `},
+        blockquote: {
+            component: styled.blockquote`
+                border-left: 5px lightgrey solid;
+                padding-left: 5px;
+        `},
+        li: {
+            component: styled.li`
+                display: list-item;
+                list-style: '*~~*';
+
+        `}
 };

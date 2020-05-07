@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import Markdown from 'markdown-to-jsx';
 import Splitter from 'm-react-splitters';
 
@@ -10,7 +10,7 @@ import './App.css';
 
 const colors = {
     background: '#666',
-    contentBackground: '#ddd',
+    contentBackground: '#fff',
     lightBorder: '#9999ff'
 
 };
@@ -36,6 +36,7 @@ const MarkdownContainer = styled(Markdown)`
     display: block;
     height: 100%;
     overflow: auto;
+    background-color: ${colors.contentBackground};
 
 `;
 
