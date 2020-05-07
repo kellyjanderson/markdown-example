@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Markdown from 'markdown-to-jsx';
 import Splitter from 'm-react-splitters';
 
+import { mdTemplateOverrides }  from './markdown-styles';
+
 import 'm-react-splitters/lib/splitters.css';
 import './App.css';
 
@@ -44,13 +46,6 @@ const MarkdownEditor = styled.textarea`
     height: 100%;
 `;
 
-
-const BigOrangeHeader = styled.h1`
-    font-size: 48px;
-    color: orange;
-    font-weight: bold;
-`;
-
 function App() {
     const [md, setMd] = useState(baseMD);
     const handleMDChange = event => setMd(event.target.value);
@@ -80,9 +75,7 @@ function App() {
                             <MarkdownContainer
                                 options={{
                                     overrides: {
-                                        h1: {
-                                            component: BigOrangeHeader,
-                                        }
+                                        ...mdTemplateOverrides
                                     }
                                 }}
                             >
