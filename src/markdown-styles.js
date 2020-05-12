@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { tomorrowNightEighties } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const mdH1 = styled.h1`
     font-size: 67px;
@@ -46,6 +48,26 @@ const mdStrong = styled.strong`
                 color: #F27997;
 `;
 
+const FencedCodeBlock = ({language='text', code, style}) => {
+    return(<SyntaxHighlighter
+        language={language}
+        style={style}
+        code={code}
+    />);
+};
+
+const Pre = props => {
+    const code = props.children.props.children;
+    let language = 'text';
+    if (props.children.props.className) {
+        language = props.children.props.className.split('-')[1];
+    }
+
+    return <FencedCodeBlock code={code} language={language}  style={tomorrowNightEighties} />
+  }
+
+
+
 export const mdTemplateOverrides = {
         h1: {
             component: mdH1
@@ -87,5 +109,6 @@ export const mdTemplateOverrides = {
                 display: list-item;
                 list-style: '*~~*';
 
-        `}
+        `},
+        pre: Pre
 };
