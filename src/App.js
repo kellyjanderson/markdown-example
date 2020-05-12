@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components/macro';
 import Markdown from 'markdown-to-jsx';
 import Splitter from 'm-react-splitters';
+import Bookmark from 'react-bookmark';
 
 import { mdTemplateOverrides }  from './markdown-styles';
 
@@ -55,6 +56,10 @@ function App() {
             <SiteContainer>
                 <SveltHeader>
                     <h1>Markdown Working example</h1>
+                    <Bookmark
+                        href="http://localhost:3000/"
+                        title="markdown working example"
+                    />
                 </SveltHeader>
                 <OutlinedMain>
                     <Splitter
